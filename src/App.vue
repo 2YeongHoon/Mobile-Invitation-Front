@@ -1,19 +1,22 @@
 <template>
   <div class="login-container">
     <div class="header">
-      <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png" alt="Google Logo" />
+      <img
+        src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png"
+        alt="Google Logo"
+      />
     </div>
     <form>
       <div class="form-group">
-        <label for="username">Username</label>
+        <label for="username">username</label>
         <input v-model="username" type="text" id="username" />
       </div>
       <div class="form-group">
-        <label for="password">Password</label>
+        <label for="password">password</label>
         <input v-model="password" type="password" id="password" />
       </div>
       <div class="form-group">
-        <button @click="submit">Sign in</button>
+        <button @click="submit">sign in</button>
       </div>
     </form>
   </div>
@@ -69,17 +72,14 @@ export default {
   data() {
     return {
       username: "",
-      password: ""
+      password: "",
     };
   },
   methods: {
     submit() {
       // make a request to the server with the username and password
       console.log(`Username: ${this.username} Password: ${this.password}`);
-    }
-  }
+    },
+  },
 };
 </script>
-
-
-
