@@ -1,5 +1,4 @@
-<template>
-  <div class="login-page">
+<div class="login-page">
     <div class="login-container">
       <h2>모바일 청첩장</h2>
 
