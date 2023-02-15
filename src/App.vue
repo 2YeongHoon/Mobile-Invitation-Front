@@ -1,85 +1,101 @@
 <template>
-  <div class="login-container">
-    <div class="header">
-      <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png" alt="Google Logo" />
+  <div class="login-page">
+    <div class="login-container">
+      <h2>모바일 청첩장</h2>
+
+      <form>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" v-model="email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input type="password" id="password" v-model="password" required>
+        </div>
+
+        <div class="form-group">
+          <button type="submit">Submit</button>
+        </div>
+
+        <div class="form-group">
+          <button type="button" @click="forgotPassword()">Forgot password?</button>
+        </div>
+      </form>
     </div>
-    <form>
-      <div class="form-group">
-        <label for="username">Username</label>
-        <input v-model="username" type="text" id="username" />
-      </div>
-      <div class="form-group">
-        <label for="password">Password</label>
-        <input v-model="password" type="password" id="password" />
-      </div>
-      <div class="form-group">
-        <button @click="submit">Sign in</button>
-      </div>
-    </form>
   </div>
 </template>
-
-<style>
-.login-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 40px;
-}
-
-.header {
-  margin-bottom: 40px;
-}
-
-.form-group {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
-label {
-  font-size: 14px;
-  margin-bottom: 10px;
-}
-
-input {
-  width: 300px;
-  height: 40px;
-  padding: 10px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-button {
-  width: 300px;
-  height: 40px;
-  background-color: #4285f4;
-  color: #fff;
-  font-size: 16px;
-  border-radius: 4px;
-  border: none;
-  cursor: pointer;
-}
-</style>
 
 <script>
 export default {
   data() {
     return {
-      username: "",
-      password: ""
+      email: '',
+      password: '',
     };
   },
   methods: {
-    submit() {
-      // make a request to the server with the username and password
-      console.log(`Username: ${this.username} Password: ${this.password}`);
-    }
-  }
+    forgotPassword() {
+      // Implement your password retrieval logic here
+    },
+  },
 };
 </script>
 
+<style scoped>
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
 
+.login-container {
+  width: 350px;
+  padding: 30px;
+  border: 1px solid #2196f3;
+}
 
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-group {
+  margin: 10px 0;
+}
+
+label {
+  margin-right: 10px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+button[type="submit"] {
+  background-color: #2196f3;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #0c7cd5;
+}
+
+button[type="button"] {
+  background-color: transparent;
+  color: #2196f3;
+  border: none;
+  cursor: pointer;
+}
+</style>
